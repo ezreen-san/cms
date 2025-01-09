@@ -6,9 +6,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: admin_login.php");
     exit();
 }
-test
+
 $result = $conn->query("SELECT * FROM complaints");
-test
+
 ?>
 
 <!DOCTYPE html>
