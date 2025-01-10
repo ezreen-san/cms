@@ -30,17 +30,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `username` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL,
-  `updationDate` varchar(255) NOT NULL
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `pincode` int(6) DEFAULT NULL,
+  `userImage` varchar(255) DEFAULT NULL,
+  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`, `updationDate`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '08-05-2020 07:23:45 PM');
+INSERT INTO `admin` (`id`, `username`, `matrixNumber`, `password`, `address`, `State`, `country`, `pincode`, `userImage`, `regDate`, `updationDate`, `status`) VALUES
+(1, 'adminuser', '202cb962ac59075b964b07152d234b70', 'adminpassword123', NULL, NULL, NULL, NULL, NULL, '2020-05-08 14:10:50', '2020-05-08 14:16:22', 1);
 
 -- --------------------------------------------------------
 
@@ -156,9 +160,6 @@ CREATE TABLE `users` (
   `userEmail` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `contactNo` bigint(11) DEFAULT NULL,
-  `address` tinytext,
-  `State` varchar(255) DEFAULT NULL,
-  `country` varchar(255) DEFAULT NULL,
   `pincode` int(6) DEFAULT NULL,
   `userImage` varchar(255) DEFAULT NULL,
   `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -170,8 +171,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fullName`, `userEmail`, `password`, `contactNo`, `address`, `State`, `country`, `pincode`, `userImage`, `regDate`, `updationDate`, `status`) VALUES
-(1, 'John Smith', 'john@gmail.com', '202cb962ac59075b964b07152d234b70', 9999999999, NULL, NULL, NULL, NULL, NULL, '2020-05-08 14:10:50', '2020-05-08 14:16:22', 1);
+INSERT INTO `users` (`id`, `username`, `matrixNumber`, `password`, `address`, `State`, `country`, `pincode`, `userImage`, `regDate`, `updationDate`, `status`) VALUES
+(1, 'johnsmith', '202cb962ac59075b964b07152d234b70', 'password123', NULL, NULL, NULL, NULL, NULL, '2020-05-08 14:10:50', '2020-05-08 14:16:22', 1);
 
 --
 -- Indexes for dumped tables
