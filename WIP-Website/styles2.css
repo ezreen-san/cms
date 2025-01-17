@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eaf0f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('background2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 80%;
+    max-width: 300px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #004aad 13%, rgba(0,0,0,0) 13%); 
+}
+
+header .logo {
+    width: 200px;
+    margin-bottom: 70px;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.firstinput {
+    margin-top: 20px;
+}
+.registration-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-indent: 8px;
+}
+
+.registration-form button {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #004aad;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.registration-form button:hover {
+    background-color: #0066cc;
+}
+
+.registration-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.registration-form a:hover {
+    text-decoration: underline;
+}
+.logo-section {
+    margin-bottom: 500px;
+    align-items: center;
+    position:absolute;
+}
+.boxlabel {
+    margin-bottom: 20px;
+    margin-top: -10px;
+    color:#fff;
+    font-weight: normal;
+    white-space: nowrap;
+}
+.create-account {
+    margin-top: 20px;
+}
+
+.create-account a {
+    color: #004aad;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
+.signin {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+p {
+    font-size: 0.9rem;
+    color: #555;
+}
+.signin a {
+    color: #004aad;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.signin a:hover {
+    text-decoration: underline;
+}
+.line {
+        width: 90%;
+    }
+.succmsg {
+    display: flex;
+    flex-direction: flex-end;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding: 0;
+}

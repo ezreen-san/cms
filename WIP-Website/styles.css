@@ -1,0 +1,91 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+main .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1e1e2f;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #00acee;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Background Pattern */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.8) 100%),
+                repeating-radial-gradient(circle, #1e1e2f, #1e1e2f 5px, #282847 10px);
+    z-index: -1;
+}
