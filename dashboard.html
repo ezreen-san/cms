@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #3A3A3A;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      gap: 10px;
+      border-bottom: 1px solid #4A4A4A;
+    }
+
+    .user-profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .user-profile span {
+      font-size: 1.2em;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .menu {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      gap: 10px; /* Added gap between menu items */
+    }
+
+    .menu-item {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .menu-item:hover {
+      background-color: #4A4A4A;
+    }
+
+    .menu-item p {
+      margin-right: 15px;
+      font-size: 1.2em;
+    }
+
+    .logout {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s;
+      
+    }
+
+    .logout p {
+      margin-right: 15px;
+      font-size: 1.2em;
+    }
+    .logout:hover {
+      background-color: #4A4A4A;
+    }
+
+    /* New logo container */
+    .logo {
+      margin-top: auto;  /* Push the logo to the bottom */
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 80px;  /* Adjust logo size */
+      height: auto;
+    }
+
+    .content {
+      flex-grow: 1;
+      background-color: #F4F4F4;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Adjust the gap between cards as needed */
+    }
+
+    .card {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      font-size: 1.2em;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card.red { background-color: #E74C3C; }
+    .card.green { background-color: #2ECC71; }
+    .card.blue { background-color: #3498DB; }
+    .card.purple { background-color: #9B59B6; }
+
+    /* New button styles */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* Adjust the gap between buttons as needed */
+      margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    .action-button {
+      padding: 15px 30px;
+      border-radius: 5px;
+      color: #fff;
+      background-color: #3498DB;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .action-button:hover {
+      background-color: #2980B9;
+    }
+
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="user-profile">
+      <img src="https://via.placeholder.com/40" alt="User Profile">
+      <span>John Doe</span>
+    </div>
+    <div class="menu">
+      <!-- New Dashboard button -->
+      <div class="menu-item">
+        <p>☰</p> <span>Dashboard</span>
+      </div>
+      <div class="menu-item">
+        <p>⚙</p> <span>Account Settings</span>
+      </div>
+      <div class="logout">
+        <p>⏻</p> <span>Logout</span>
+      </div>
+    </div>
+    <!-- Logo section at the bottom -->
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+  </div>
+  
+  <div class="content">
+    <div class="header">
+      <h1>Dashboard</h1>
+      <div id="date"></div>
+    </div>
+    <div class="center-container">
+      <div class="cards">
+        <div class="card red">Complaints <br> <span id="complaints-count">Loading...</span></div>
+        <div class="card green">Not Processed <br> <span id="notProcessed-count">Loading...</span></div>
+        <div class="card blue">In Process <br> <span id="inProcess-count">Loading...</span></div>
+        <div class="card purple">Closed <br> <span id="closed-count">Loading...</span></div>
+      </div>
+      <div class="action-buttons">
+        <button class="action-button" onclick="lodgeComplaint()">Lodge a Complaint</button>
+        <button class="action-button" onclick="viewComplaintStatus()">View Complaint Status</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Real-time date
+    function updateDate() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
+    }
+    setInterval(updateDate, 1000);
+    updateDate();
+
+    // Fetch complaint status from a server (simulated here)
+    function fetchComplaintStatus() {
+      const fakeData = {
+        complaints: 15,
+        notProcessed: 5,
+        inProcess: 8,
+        closed: 2,
+      };
+
+      document.getElementById('complaints-count').textContent = fakeData.complaints;
+      document.getElementById('notProcessed-count').textContent = fakeData.notProcessed;
+      document.getElementById('inProcess-count').textContent = fakeData.inProcess;
+      document.getElementById('closed-count').textContent = fakeData.closed;
+    }
+    fetchComplaintStatus();
+
+    // Placeholder functions for button actions
+    function lodgeComplaint() {
+      alert('Lodge a complaint functionality');
+    }
+
+    function viewComplaintStatus() {
+      alert('View complaint status functionality');
+    }
+  </script>
+</body>
+</html>
