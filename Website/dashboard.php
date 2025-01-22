@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <h1>Ki</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Account Settings</a>
-                        <ul>
-                            <li><a href="#">Change Password</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Complaint</a>
-                        <ul>
-                            <li><a href="#">Lodge Complaint</a></li>
-                            <li><a href="#">Complaint History</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Logout</a></li>
-                </ul>
-            </nav>
-            <div class="logo">
-                <img src="logo.png" alt="Breyer Logo">
-                <p>Your Premier TVET College</p>
-            </div>
-        </div>
-        <div class="content">
-            <div class="header">
-                <h2>Dashboard</h2>
-                <p>Tuesday, January 18th</p>
-            </div>
-            <div class="cards">
-                <div class="card red">Complaints <br> <span>1</span></div>
-                <div class="card green">Not Processed <br> <span>0</span></div>
-                <div class="card blue">In Process <br> <span>1</span></div>
-                <div class="card purple">Closed <br> <span>0</span></div>
-            </div>
-        </div>
+  <div class="sidebar">
+    <div class="user-profile">
+      <img src="https://via.placeholder.com/40" alt="User Profile">
+      <span>John Doe</span>
     </div>
+    <div class="menu">
+      <!-- New Dashboard button -->
+      <div class="menu-item">
+        <p>☰</p> <span>Dashboard</span>
+      </div>
+      <div class="menu-item">
+        <p>⚙</p> <span>Account Settings</span>
+      </div>
+      <div class="logout">
+        <p>⏻</p> <span>Logout</span>
+      </div>
+    </div>
+    <!-- Logo section at the bottom -->
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+  </div>
+  
+  <div class="content">
+    <div class="header">
+      <h1>Dashboard</h1>
+      <div id="date"></div>
+    </div>
+    <div class="center-container">
+      <div class="cards">
+        <div class="card red">Complaints <br> <span id="complaints-count">Loading...</span></div>
+        <div class="card green">Not Processed <br> <span id="notProcessed-count">Loading...</span></div>
+        <div class="card blue">In Process <br> <span id="inProcess-count">Loading...</span></div>
+        <div class="card purple">Closed <br> <span id="closed-count">Loading...</span></div>
+      </div>
+      <div class="action-buttons">
+        <button class="action-button" onclick="lodgeComplaint()">Lodge a Complaint</button>
+        <button class="action-button" onclick="viewComplaintStatus()">View Complaint Status</button>
+      </div>
+    </div>
+  </div>
+  <script src="dashboardscript.js"></script> 
 </body>
 </html>

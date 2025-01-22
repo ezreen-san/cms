@@ -1,112 +1,173 @@
-/* General Styling */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    color: #333;
-}
+  }
 
-.container {
+  body {
     display: flex;
     height: 100vh;
-}
+    overflow: hidden;
+  }
 
-/* Sidebar Styling */
-.sidebar {
-    background-color: #333;
-    color: #fff;
+  .sidebar {
     width: 250px;
+    background-color: #3A3A3A;
+    color: #fff;
     display: flex;
     flex-direction: column;
+  }
+
+  .user-profile {
+    display: flex;
     align-items: center;
     padding: 20px;
-}
+    gap: 10px;
+    border-bottom: 1px solid #4A4A4A;
+  }
 
-.sidebar h1 {
-    margin: 0 0 20px 0;
-    font-size: 24px;
-}
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
 
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
+  .user-profile span {
+    font-size: 1.2em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-.sidebar nav ul li {
-    margin: 10px 0;
-}
-
-.sidebar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.sidebar nav ul li a:hover {
-    background-color: #555;
-}
-
-.sidebar .logo {
-    margin-top: auto;
-    text-align: center;
-}
-
-.sidebar .logo img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-/* Content Styling */
-.content {
+  .menu {
     flex-grow: 1;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 10px; /* Added gap between menu items */
+  }
 
-.header {
+  .menu-item {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .menu-item:hover {
+    background-color: #4A4A4A;
+  }
+
+  .menu-item p {
+    margin-right: 15px;
+    font-size: 1.2em;
+  }
+
+  .logout {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    
+  }
+
+  .logout p {
+    margin-right: 15px;
+    font-size: 1.2em;
+  }
+  .logout:hover {
+    background-color: #4A4A4A;
+  }
+
+  /* New logo container */
+  .logo {
+    margin-top: auto;  /* Push the logo to the bottom */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 80px;  /* Adjust logo size */
+    height: auto;
+  }
+
+  .content {
+    flex-grow: 1;
+    background-color: #F4F4F4;
+    padding: 20px;
+  }
+
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-}
+  }
 
-.cards {
+  .header h1 {
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  .cards {
     display: flex;
-    gap: 20px;
-}
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between cards as needed */
+  }
 
-.card {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
+  .card {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.2em;
     color: #fff;
-}
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
 
-.card span {
-    display: block;
-    font-size: 40px;
-    margin-top: 10px;
-}
+  .card:hover {
+    transform: scale(1.05);
+  }
 
-.card.red {
-    background-color: #e74c3c;
-}
+  .card.red { background-color: #E74C3C; }
+  .card.green { background-color: #2ECC71; }
+  .card.blue { background-color: #3498DB; }
+  .card.purple { background-color: #9B59B6; }
 
-.card.green {
-    background-color: #27ae60;
-}
+  /* New button styles */
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
 
-.card.blue {
-    background-color: #3498db;
-}
+  .action-button {
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3498DB;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+  }
 
-.card.purple {
-    background-color: #9b59b6;
-}
+  .action-button:hover {
+    background-color: #2980B9;
+  }
+
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

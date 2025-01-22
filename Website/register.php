@@ -52,5 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="signin.php">Sign in</a>
         </div>
     </div>
+
 </body>
 </html>

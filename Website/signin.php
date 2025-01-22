@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             <hr>
             <p class="noaccount">Don't have an account yet?</p>
-            <a class="createaccount" href="dummy.php">Create an account</a>
+            <a class="createaccount" href="register.php">Create an account</a>
         </div>
     </div>
     <script src="script.js"></script> 
