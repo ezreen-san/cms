@@ -1,65 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+
+/* General Reset */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #eaf0f4;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-image: url('background2.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+/* Container */
 .container {
-    width: 80%;
-    max-width: 300px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px 20px;
-    text-align: center;
-    background-image: linear-gradient(to bottom, #004aad 13%, rgba(0,0,0,0) 13%); 
-}
-
-header .logo {
-    width: 200px;
-    margin-bottom: 70px;
-}
-
-h1 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.registration-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
 }
+
+/* Registration Box */
+.registration-box {
+    background: #ffffff;
+    background-image: linear-gradient(to bottom, #004aad 12%, rgba(0,0,0,0) 12%); 
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+.registration-box h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    margin-top: -12px;
+    color: #ffffff;
+}
+
+/* Form */
 .firstinput {
-    margin-top: 20px;
+    margin-top: 5px;
 }
-.registration-form input {
+
+form input {
     width: 100%;
     padding: 10px;
+    margin-bottom: 12px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 20px;
     box-sizing: border-box;
     font-weight: normal;
-    text-indent: 8px;
+    text-indent:  8px;
 }
 
-.registration-form button {
+form button {
+    width: 100%;
     padding: 10px;
     font-size: 1rem;
     color: #fff;
@@ -68,69 +76,39 @@ h1 {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+    white-space: nowrap;
 }
 
-.registration-form button:hover {
+form button:hover {
     background-color: #0066cc;
 }
 
-.registration-form a {
-    color: #007bff;
-    text-decoration: none;
+hr {
+    width: 90%;
+    margin-top: 24px;
 }
 
-.registration-form a:hover {
-    text-decoration: underline;
-}
-.logo-section {
-    margin-bottom: 500px;
-    align-items: center;
-    position:absolute;
-}
-.boxlabel {
-    margin-bottom: 20px;
-    margin-top: -10px;
-    color:#fff;
-    font-weight: normal;
-    white-space: nowrap;
-}
-.create-account {
-    margin-top: 20px;
-}
-
-.create-account a {
-    color: #004aad;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.create-account a:hover {
-    text-decoration: underline;
-}
-.signin {
-    margin-top: 20px;
+/* Text and Links */
+.existing {
+    font-size: 14px;
+    color: #666666;
     margin-bottom: 0px;
 }
-p {
-    font-size: 0.9rem;
-    color: #555;
-}
-.signin a {
+
+.registration-box a {
     color: #004aad;
     text-decoration: none;
     font-weight: normal;
 }
 
-.signin a:hover {
+.registration-box a:hover {
     text-decoration: underline;
 }
-.line {
-        width: 90%;
-    }
+
 .succmsg {
-    display: flex;
-    flex-direction: flex-end;
-    justify-content: center;
-    margin-bottom: 0px;
-    padding: 0;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }

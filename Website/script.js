@@ -22,3 +22,5 @@ function lsRememberMe() {
     localStorage.checkbox = "";
   }
 }
+
+document.querySelector('form').addEventListener('submit', lsRememberMe);

@@ -28,34 +28,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREATE YOUR ACCOUNT</title>
+    <title>Student Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
-        <header class="logo-section">
-            <img src="logo.png" alt="Breyer Logo" class="logo">
-        </header>
     <div class="container">
-
-        <main>
-            <h1 class="boxlabel">STUDENT REGISTRATION</h1>
-            <form action="register.php" method="POST" class="registration-form">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="registration-box">
+            <h2>Student Registration</h2>
+            <form action="" method="POST" class="registration-form">
             <?php if (!empty($success_message)): ?>
                     <p class="succmsg"><?php echo htmlspecialchars($success_message); ?></p>
             <?php endif; ?>
-                <input type="text" name="username" class="firstinput" placeholder="Username" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <input type="text" placeholder="Username" name="username" class="firstinput" required>
+                <input type="email" placeholder="Email Address" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <input type="password" placeholder="Confirm Password" name="confirm_password" required>
                 <button type="submit">Register</button>
             </form>
-            <hr style="margin-top: 24px;" class="line">
-            <div class="signin">
-            <p style="margin-bottom: 0px;">Already Registered?</p>
+            <hr>
+            <p class="existing">Already Registered?</p>
             <a href="signin.php">Sign in</a>
-            </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>
