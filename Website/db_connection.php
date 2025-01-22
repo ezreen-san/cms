@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $dbname = 'breyer_college';
-$user = 'pma';
+$user = 'root';
 
 
 try {
