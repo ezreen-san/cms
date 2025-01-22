@@ -1,5 +1,5 @@
 <?php
-require 'db_connection.php';
+require '../includes/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -30,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Logo" class="logo">
+        <img src="assets/img/logo.png" alt="Logo" class="logo">
         <div class="registration-box">
             <h2>Student Registration</h2>
             <form action="" method="POST" class="registration-form">
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             <hr>
             <p class="existing">Already Registered?</p>
-            <a href="signin.php">Sign in</a>
+            <a href="index.php">Sign in</a>
         </div>
     </div>
 

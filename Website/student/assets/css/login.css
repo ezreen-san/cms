@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-image: url('background2.png');
+    background-image: url('../img/background.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

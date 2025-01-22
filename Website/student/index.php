@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("db_connection.php");
+include("includes/db_connection.php");
 
 $error_message = ""; // Initialize an empty error message
 
@@ -33,11 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SCMS | Breyer Gombak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Logo" class="logo">
+        <img src="assets/img/logo.png" alt="Logo" class="logo">
         <div class="registration-box">
             <h2>Student Login</h2>
             <form action="" method="POST" class="registration-form">
@@ -57,6 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a class="createaccount" href="register.php">Create an account</a>
         </div>
     </div>
-    <script src="script.js"></script> 
+    <script src="script/cookies.js"></script> 
 </body>
 </html>

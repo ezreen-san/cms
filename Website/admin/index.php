@@ -1,5 +1,5 @@
 <?php
-require 'db_connection.php';
+require 'includes/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -23,16 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="adminlogin.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <div>
-<a href="index.html" class="back-link">← Back to Homepage</a>
+<a href="../index.html" class="back-link">← Back to Homepage</a>
 </div>
     <div class="container">
         
         <div class="logo">
-            <img src="logo.png" alt="Breyer Logo">
+            <img src="assets/img/logo.png" alt="Breyer Logo">
             <h1>Kolej Breyer Gombak</h1>
             <p>Your Premier TVET College</p>
         </div>

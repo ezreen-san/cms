@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('bg2.png'); /* Replace with the actual background image */
+    background-image: url('../img/background.png'); /* Replace with the actual background image */
     background-size: cover;
     background-position: center;
 }
