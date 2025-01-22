@@ -20,9 +20,11 @@
       <div class="menu-item">
         <p>⚙</p> <span>Account Settings</span>
       </div>
+      <a href="../index.html">
       <div class="logout">
         <p>⏻</p> <span>Logout</span>
       </div>
+      </a>
     </div>
     <!-- Logo section at the bottom -->
     <div class="logo">

@@ -72,7 +72,12 @@
     align-items: center;
     cursor: pointer;
     transition: background 0.3s;
-    
+    text-decoration: none;
+    color: #F4F4F4;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .logout p {
