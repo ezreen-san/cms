@@ -10,3 +10,4 @@ To-do:
 
 Final Changes
 - change SMTP host, username, and password on mailer.php to make forgot password work.
+- run this code inside forgot_password folder in terminal (composer require phpmailer/phpmailer).
