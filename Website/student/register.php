@@ -30,17 +30,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <div class="container">
         <img src="assets/img/logo.png" alt="Logo" class="logo">
-        <div class="registration-box">
+        <div class="title-box">
             <h2>Student Registration</h2>
-            <form action="" method="POST" class="registration-form">
+        </div>
+        <div class="message-box">    
             <?php if (!empty($success_message)): ?>
-                    <p class="succmsg"><?php echo htmlspecialchars($success_message); ?></p>
+                    <p class="successmsg"><?php echo htmlspecialchars($success_message); ?></p>
             <?php endif; ?>
+        </div>
+        <div class="main-box">
+            <form action="" method="POST" class="registration-form">
                 <input type="text" placeholder="Username" name="username" class="firstinput" required>
                 <input type="email" placeholder="Email Address" name="email" required>
                 <input type="password" placeholder="Password" name="password" required>
@@ -49,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             <hr>
             <p class="existing">Already Registered?</p>
-            <a href="index.php">Sign in</a>
+            <a class="sign_in" href="index.php">Sign in</a>
         </div>
     </div>
 

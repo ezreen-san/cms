@@ -33,20 +33,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SCMS | Breyer Gombak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <div class="container">
         <img src="assets/img/logo.png" alt="Logo" class="logo">
-        <div class="registration-box">
+        <div class="title-box">
             <h2>Student Login</h2>
-            <form action="" method="POST" class="registration-form">
-            <?php if (!empty($error_message)): ?>
+        </div>
+        <div class="message-box">
+        <?php if (!empty($error_message)): ?>
                     <p class="errormsg"><?php echo htmlspecialchars($error_message); ?></p>
             <?php endif; ?>
+        </div>
+        <div class="main-box">
+            <form action="" method="POST" class="registration-form">
                 <input type="text" id="username" placeholder="Username" name="username" class="firstinput" required>
                 <input type="password" id="password" placeholder="Password" name="password" required>
-                <div class="login-options">
+                <div class="cookies">
                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label class="remembermetext" for="rememberMe">Remember Me</label>
                 <a href="#" class="forgot-password">Forgot Password?</a>
                 </div>
@@ -57,6 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a class="createaccount" href="register.php">Create an account</a>
         </div>
     </div>
-    <script src="script/cookies.js"></script> 
+    <script src="assets/script/cookies.js"></script> 
 </body>
 </html>

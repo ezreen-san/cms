@@ -1,6 +1,7 @@
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-
+/* General Reset */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -10,6 +11,7 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Container */
 .container {
     display: flex;
     flex-direction: column;
@@ -19,11 +21,65 @@ body {
     text-align: center;
 }
 
-.registration-box {
+/* Logo */
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Title Box */
+.title-box {
+    background: #004aad;
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 0;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: -1px;
+}
+
+.title-box h2 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Message Box (Success/Error Message) */
+.message-box {
+    display: none; /* Hide by default */
     background: #ffffff;
-    background-image: linear-gradient(to bottom, #004aad 13%, rgba(0,0,0,0) 13%); 
-    padding: 30px 20px;
-    border-radius: 20px;
+    padding: 20px 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 0;
+}
+
+/* Show message box when it contains success or error messages */
+.message-box:has(.successmsg),
+.message-box:has(.errormsg) {
+    display: block;
+}
+
+.successmsg {
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+}
+
+.errormsg {
+    color: red;
+    margin: 0;
+}
+
+/* Main Box (Login/Registration) */
+.main-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 80%;
@@ -31,21 +87,9 @@ body {
     margin: 0 auto;
 }
 
-.logo {
-    width: 200px;
-    margin-bottom: 20px;
-}
-
-.registration-box h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 20px;
-    margin-top: -17px;
-    color: #ffffff;
-}
-
+/* Form Elements */
 .firstinput {
-    margin-top: 5px;
+    margin-top: 0;
 }
 
 form input {
@@ -57,7 +101,7 @@ form input {
     border-radius: 20px;
     box-sizing: border-box;
     font-weight: normal;
-    text-indent:  8px;
+    text-indent: 8px;
 }
 
 form button {
@@ -78,45 +122,43 @@ form button:hover {
     background-color: #0066cc;
 }
 
-.noaccount {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 0px;
-}
-
-.registration-form a:hover {
-    text-decoration: underline;
-}
-
-p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-hr {
-    width: 90%;
-    margin-top: 24px;
-}
-.login-options {
+/* Remember Me Cookies */
+.cookies {
     display: block;
     margin-top: 0px;
     justify-content: center;
 }
 
+/* Checkbox Styles */
 input[type="checkbox"] {
     -webkit-appearance: checkbox;
-       -moz-appearance: checkbox;
-            appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
     display: inline-block;
     width: auto;
     margin-top: -50px;
     margin-left: 5px;
     padding: 0;
-  }
-.remembermetext {
-  font-size: 0.9rem; 
-  margin-right: 15px;
 }
+
+/* Text Styles */
+p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.remembermetext {
+    font-size: 0.9rem;
+    margin-right: 15px;
+}
+
+.existing, .noaccount {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 0px;
+}
+
+/* Links */
 .forgot-password {
     text-decoration: underline;
     color: #007BFF;
@@ -125,17 +167,20 @@ input[type="checkbox"] {
     white-space: nowrap;
 }
 
-.errormsg {
-    color: red;
-    margin-bottom: 5px;
-}
-
-.createaccount {
+.sign_in, .createaccount {
     color: #004aad;
     text-decoration: none;
     font-weight: normal;
 }
 
-.createaccount:hover {
+.createaccount:hover,
+.registration-box a:hover,
+.sign_in:hover {
     text-decoration: underline;
+}
+
+/* Divider */
+hr {
+    width: 90%;
+    margin-top: 24px;
 }
