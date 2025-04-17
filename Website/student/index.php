@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="password" placeholder="Password" name="password" required>
                 <div class="cookies">
                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label class="remembermetext" for="rememberMe">Remember Me</label>
-                <a href="#" class="forgot-password">Forgot Password?</a>
+                <a href="forgot_password/forgot-password.php" class="forgot-password">Forgot Password?</a>
                 </div>
                 <button type="submit">Sign In</button>
             </form>
