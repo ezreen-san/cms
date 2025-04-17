@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,10 @@
             <h2>Forgot Password</h2>
         </div>
         <div class="message-box" id="message-box">
-            <!-- Error or success messages will appear here -->
+            <?php if (isset($_SESSION['error_message'])): ?>
+                <p class="errormsg"><?php echo htmlspecialchars($_SESSION['error_message']); ?></p>
+                <?php unset($_SESSION['error_message']); ?>
+            <?php endif; ?>
         </div>
         <div class="main-box">
             <form action="send-password-reset.php" method="POST" class="registration-form">

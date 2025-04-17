@@ -3,7 +3,13 @@ session_start();
 require_once '../includes/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST["email"];
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
+    
+    if (!$email) {
+        $_SESSION['error_message'] = "Please enter a valid email address.";
+        header("Location: forgot-password.php");
+        exit;
+    }
     
     // Check if email exists in the database
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
@@ -11,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if (!$user) {
-        echo json_encode(['status' => 'error', 'message' => 'No account found with that email address.']);
+        $_SESSION['error_message'] = "No account found with that email address.";
+        header("Location: forgot-password.php");
         exit;
     }
     
@@ -91,6 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Database update failed.";
     }
+} else {
+    header("Location: forgot-password.php");
+    exit;
 }
 ?>
 
