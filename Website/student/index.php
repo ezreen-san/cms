@@ -49,7 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="main-box">
             <form action="" method="POST" class="registration-form">
                 <input type="text" id="username" placeholder="Username" name="username" class="firstinput" required>
-                <input type="password" id="password" placeholder="Password" name="password" required>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Password" name="password" required>
+                    <i class="toggle-password fas fa-eye" onclick="togglePassword('password')"></i>
+                </div>
                 <div class="cookies">
                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label class="remembermetext" for="rememberMe">Remember Me</label>
                 <a href="forgot_password/forgot-password.php" class="forgot-password">Forgot Password?</a>
@@ -62,5 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     <script src="assets/script/cookies.js"></script> 
+    <script src="assets/script/password-toggle.js"></script>
 </body>
 </html>

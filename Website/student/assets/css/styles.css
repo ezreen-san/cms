@@ -184,3 +184,26 @@ hr {
     width: 90%;
     margin-top: 24px;
 }
+
+/* Toggle Password Preview */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #004aad;
+}

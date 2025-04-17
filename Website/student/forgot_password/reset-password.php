@@ -83,8 +83,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="main-box">
             <form action="" method="POST" class="registration-form">
-                <input type="password" placeholder="New Password" name="password" class="firstinput" required>
-                <input type="password" placeholder="Confirm New Password" name="confirm_password" required>
+                <div class="password-container">
+                    <input type="password" placeholder="New Password" name="password" class="firstinput" required>
+                    <i class="toggle-password fas fa-eye" onclick="togglePassword('password')"></i>
+                </div>
+                <div class="password-container">
+                    <input type="password" placeholder="Confirm New Password" name="confirm_password" required>
+                    <i class="toggle-password fas fa-eye" onclick="togglePassword('confirm_password')"></i>
+                </div>
                 <button type="submit">Reset Password</button>
             </form>
             <hr>
@@ -92,5 +98,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a class="sign_in" href="../index.php">Back to login</a>
         </div>
     </div>
+    <script src="../assets/script/password-toggle.js"></script>
 </body>
 </html>
