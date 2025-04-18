@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="main-box">
             <form action="" method="POST" class="registration-form">
-                <input type="text" placeholder="Full Name" name="fullname" required>
+                <input type="text" placeholder="Username" name="username" required>
                 <input type="email" placeholder="Email Address" name="email" required>
                 <div class="password-container">
                     <input type="password" placeholder="Password" name="password" required>
