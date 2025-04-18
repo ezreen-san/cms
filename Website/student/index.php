@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userip = $_SERVER['REMOTE_ADDR'];
         $status = 1;
 
-        header("Location: dashboard.php");
+        header("Location: pages/dashboard.php");
         exit();
     } else {
         $error_message = "Invalid username or password.";
@@ -55,13 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="cookies">
                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label class="remembermetext" for="rememberMe">Remember Me</label>
-                <a href="forgot_password/forgot-password.php" class="forgot-password">Forgot Password?</a>
+                <a href="pages/forgot_password/forgot-password.php" class="forgot-password">Forgot Password?</a>
                 </div>
                 <button type="submit">Sign In</button>
             </form>
             <hr>
             <p class="noaccount">Don't have an account yet?</p>
-            <a class="createaccount" href="register.php">Create an account</a>
+            <a class="createaccount" href="pages/register.php">Create an account</a>
         </div>
     </div>
     <script src="assets/script/cookies.js"></script> 

@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-require __DIR__ . '/../forgot_password/vendor/autoload.php';
+require __DIR__ . '/../pages/forgot_password/vendor/autoload.php';
 
 // Create a new PHPMailer instance
 $mail = new PHPMailer(true);
@@ -21,7 +21,7 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
 // Default sender
-$mail->setFrom('no-reply@breyer.edu.my', 'Breyer College');
+$mail->setFrom('no-reply@breyer.edu.my', 'Breyer College Gombak');
 
 // Enable HTML
 $mail->isHtml(true);

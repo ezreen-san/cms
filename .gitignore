@@ -1,5 +1,6 @@
 # Composer
 composer.lock
+composer.json
 vendor/
 
-/Website/student/forgot_password/vendor/
+/Website/student/pages/forgot_password/vendor/

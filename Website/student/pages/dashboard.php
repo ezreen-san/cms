@@ -16,7 +16,7 @@ $username = $_SESSION['username'] ?? 'Guest';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | SCMS Breyer Gombak</title>
-  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
   <div class="sidebar">
@@ -32,7 +32,7 @@ $username = $_SESSION['username'] ?? 'Guest';
       <div class="menu-item">
         <p>⚙</p> <span>Account Settings</span>
       </div>
-      <a href="logout.php"> <!-- Changed from ../index.html -->
+      <a href="../includes/logout.php"> <!-- Changed from ../index.html -->
       <div class="logout">
         <p>⏻</p> <span>Logout</span>
       </div>
@@ -40,7 +40,7 @@ $username = $_SESSION['username'] ?? 'Guest';
     </div>
     <!-- Logo section at the bottom -->
     <div class="logo">
-      <img src="assets/img/logo.png" alt="Logo">
+      <img src="../assets/img/logo.png" alt="Logo">
     </div>
   </div>
   

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db_connection.php';
+require_once '../../includes/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
@@ -46,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->rowCount() > 0) {
         try {
             // Set up mailer
-            $mail = require __DIR__ . "/../includes/mailer.php";
+            $mail = require __DIR__ . "/../../includes/mailer.php";
             
             $mail->addAddress($email);
-            $mail->Subject = "Password Reset OTP - Breyer College";
+            $mail->Subject = "Password Reset OTP - Breyer College Gombak";
             
             // Email body with OTP
             $mail->Body = <<<HTML
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <body>
                 <div class="container">
                     <div class="header">
-                        <h2>Breyer College Password Reset</h2>
+                        <h2>Breyer College Gombak Password Reset</h2>
                     </div>
                     <div class="content">
                         <p>Dear Student,</p>
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <div class="footer">
                         <p>This is an automated email. Please do not reply.</p>
-                        <p>&copy; Breyer College. All rights reserved.</p>
+                        <p>&copy; Breyer College Gombak. All rights reserved.</p>
                     </div>
                 </div>
             </body>
@@ -110,11 +110,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sending Reset Email | SCMS Breyer Gombak</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
     <div class="container">
-        <img src="../assets/img/logo.png" alt="Logo" class="logo">
+        <img src="../../assets/img/logo.png" alt="Logo" class="logo">
         <div class="title-box">
             <h2>Processing Request</h2>
         </div>

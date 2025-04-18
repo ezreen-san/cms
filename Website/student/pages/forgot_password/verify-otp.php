@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate OTP
     $token_hash = hash("sha256", $otp);
     
-    require_once '../includes/db_connection.php';
+    require_once '../../includes/db_connection.php';
     
     $stmt = $pdo->prepare("SELECT * FROM users 
                           WHERE email = :email 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify OTP | SCMS Breyer Gombak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
     <style>
         .otp-container {
             display: flex;
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="container">
-        <img src="../assets/img/logo.png" alt="Logo" class="logo">
+        <img src="../../assets/img/logo.png" alt="Logo" class="logo">
         <div class="title-box">
             <h2>Verify OTP</h2>
         </div>

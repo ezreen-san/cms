@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Hash the new password
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
         
-        require_once '../includes/db_connection.php';
+        require_once '../../includes/db_connection.php';
         
         // Update the user's password and clear the reset token
         $stmt = $pdo->prepare("UPDATE users 
@@ -65,11 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password | SCMS Breyer Gombak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
     <div class="container">
-        <img src="../assets/img/logo.png" alt="Logo" class="logo">
+        <img src="../../assets/img/logo.png" alt="Logo" class="logo">
         <div class="title-box">
             <h2>Reset Password</h2>
         </div>
@@ -95,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             <hr>
             <p class="existing">Remember your password?</p>
-            <a class="sign_in" href="../index.php">Back to login</a>
+            <a class="sign_in" href="../../index.php">Back to login</a>
         </div>
     </div>
-    <script src="../assets/script/password-toggle.js"></script>
+    <script src="../../assets/script/password-toggle.js"></script>
 </body>
 </html>
