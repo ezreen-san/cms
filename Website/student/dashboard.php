@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check for authenticated user
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+// Get user details for display
+$username = $_SESSION['username'] ?? 'Guest';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +22,7 @@
   <div class="sidebar">
     <div class="user-profile">
       <img src="https://via.placeholder.com/40" alt="User Profile">
-      <span>John Doe</span>
+      <span><?php echo htmlspecialchars($username); ?></span>
     </div>
     <div class="menu">
       <!-- New Dashboard button -->
@@ -20,7 +32,7 @@
       <div class="menu-item">
         <p>⚙</p> <span>Account Settings</span>
       </div>
-      <a href="../index.html">
+      <a href="logout.php"> <!-- Changed from ../index.html -->
       <div class="logout">
         <p>⏻</p> <span>Logout</span>
       </div>

@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['login'] = $username;
-        $_SESSION['id'] = $user['id'];
+        $_SESSION['user_id'] = $user['id'];  // Changed from 'id' to 'user_id'
+        $_SESSION['username'] = $username;    // Changed from 'login' to 'username'
         $userip = $_SERVER['REMOTE_ADDR'];
         $status = 1;
 
