@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'breyer_college';
+$dbname = 'breyer_gombak';
 $user = 'root';
 
 

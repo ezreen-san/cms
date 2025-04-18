@@ -1,2 +1,5 @@
-/vendor/
+# Composer
+composer.lock
+vendor/
+
 /Website/student/forgot_password/vendor/
